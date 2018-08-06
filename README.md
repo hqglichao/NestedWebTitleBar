@@ -2,7 +2,7 @@
 
 ## 标题栏
 decreasing title bar height while scrolling webview.   
-标题栏高度随着webview的滑动而变化
+标题栏高度、透明度和大小随着webview的滑动而变化
 
 ### Screenshots
 <img src="https://github.com/hqglichao/NestedWebTitleBar/blob/master/screenrecord/scale_title_bar.gif" alt="GitHub" title="GitHub,Social Coding" width="30%" height="30%" />
