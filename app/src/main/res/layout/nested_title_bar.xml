@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base.nestedscrolltitlebar.NestedTitleBarView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nvTitleBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/rlTitleBar"
+            layout="@layout/view_top_bar_12"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height" />
+
+        <TextView
+            android:id="@+id/tvScaledWebTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height_half"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/vLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:background="@color/c_bbbbbb" />
+
+    <ProgressBar
+        android:id="@+id/titleProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:progress="10"
+        android:progressDrawable="@drawable/progressbar_style"
+        android:visibility="gone" />
+
+    <base.nestedscrolltitlebar.NestedChildWebView
+        android:id="@+id/wvWeb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/rlBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivBottomBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="120dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/h5_bottom_back" />
+
+        <ImageView
+            android:id="@+id/ivBottomForward"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="120dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/h5_bottom_forward" />
+    </RelativeLayout>
+</base.nestedscrolltitlebar.NestedTitleBarView>
