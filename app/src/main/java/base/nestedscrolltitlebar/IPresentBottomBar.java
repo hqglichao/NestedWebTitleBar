@@ -7,4 +7,5 @@ package base.nestedscrolltitlebar;
 public interface IPresentBottomBar {
     void presentBottomBar();
     int getBottomBarHeight();
+    void setBottomIconStatusWrap();
 }

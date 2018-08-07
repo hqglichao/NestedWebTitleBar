@@ -46,11 +46,11 @@ public class NestedTitleBarView extends LinearLayout implements NestedScrollingP
 
     @Override
     public void presentBottomBar() {
-        if(wvWeb != null && wvWeb.copyBackForwardList().getSize() >= 1 && rlBottomBar.getVisibility() == GONE) {
+        if(wvWeb != null && wvWeb.copyBackForwardList().getSize() >= 1 && rlBottomBar.getVisibility() == GONE && (wvWeb.canGoBack() || wvWeb.canGoForward())) {
             rlBottomBar.setVisibility(VISIBLE);
             ivBack.setImageResource(R.mipmap.ic_close_black);
+            setBottomIconStatus(CAN_ONLY_BACK);
         }
-        setBottomIconStatus(CAN_ONLY_BACK);
     }
 
     @Override
@@ -60,6 +60,15 @@ public class NestedTitleBarView extends LinearLayout implements NestedScrollingP
         } else {
             return 0;
         }
+    }
+
+    @Override
+    public void setBottomIconStatusWrap() {
+        if (wvWeb == null) return;
+        if (wvWeb.canGoForward() && wvWeb.canGoBack()) setBottomIconStatus(CAN_BACK_FORWARD);
+        else if (wvWeb.canGoBack()) setBottomIconStatus(CAN_ONLY_BACK);
+        else if (wvWeb.canGoForward()) setBottomIconStatus(CAN_ONLY_FORWARD);
+        else setBottomIconStatus(-1);
     }
 
     WebView wvWeb;
