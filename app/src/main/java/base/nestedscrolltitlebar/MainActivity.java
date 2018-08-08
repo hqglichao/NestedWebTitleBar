@@ -11,7 +11,7 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private final String webUrl = "http://m.iqiyi.com";
+    private final String webUrl = "http://www.baidu.com";
     WebView wvWeb;
     TextView tvWebTitle, tvWebUrl;
     @Override

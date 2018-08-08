@@ -41,15 +41,21 @@ public class NestedChildWebView extends WebView implements NestedScrollingChild 
 
 
     public NestedChildWebView(Context context) {
-        this(context, null);
+        super(context);
+        init();
     }
 
     public NestedChildWebView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        super(context, attrs);
+        init();
     }
 
     public NestedChildWebView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    private void init() {
         nestedScrollingChildHelper = new NestedScrollingChildHelper(this);
         setNestedScrollingEnabled(true);
     }
