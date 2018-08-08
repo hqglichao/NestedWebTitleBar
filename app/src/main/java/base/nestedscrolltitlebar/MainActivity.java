@@ -3,6 +3,7 @@ package base.nestedscrolltitlebar;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
@@ -11,7 +12,7 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private final String webUrl = "http://www.baidu.com";
+    private final String webUrl = "https://m.baidu.com/";
     WebView wvWeb;
     TextView tvWebTitle, tvWebUrl;
     @Override
@@ -29,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         tvWebTitle = (TextView) findViewById(R.id.tvWebTitle);
         tvWebUrl = (TextView) findViewById(R.id.tvWebUrl);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (wvWeb.canGoBack()) wvWeb.goBack();
+            else finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     private void initWeb() {
